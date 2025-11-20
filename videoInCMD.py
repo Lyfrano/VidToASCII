@@ -5,7 +5,7 @@ import asyncio
 import skimage as ski
 from skimage.transform import resize
 
-ffmpeg_path = r"ffmpeg-2025-11-17-git-e94439e49b-essentials_build\bin\ffmpeg.exe"
+ffmpeg_path = r"ffmpeg-2025\bin\ffmpeg.exe"
 vid_name = "input_video.mp4"
 out_name = r"temp\output_video"
 vid_fps = 30
