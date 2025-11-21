@@ -1,1 +1,1 @@
-A "Catch-All" repository containing small scale projects that I've developed
+A python based app that converts videos to ASCII art
