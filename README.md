@@ -29,4 +29,14 @@ python videoInCMD.py [video_file.mp4]
 Or simply run without arguments:
 ```bash
 python videoInCMD.py
+```
+
+## Examples
+###### A small example of the capabilities of the program
+
+<small>
+   
+![bad-optimize](https://github.com/user-attachments/assets/db0ff0ea-00b6-43cb-8589-8f82a5a999f7)
+
+</small>      
 
