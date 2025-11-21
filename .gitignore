@@ -1,5 +1,6 @@
 # Temporary folder
 temp/
+output/
 
 # Video files
 *.mp4
