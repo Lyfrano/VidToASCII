@@ -1,4 +1,12 @@
-A python based app that converts videos to ASCII art
+<center> 
+   <h1> A python based app that converts videos to ASCII art </h1> 
+</center>
+
+<p align="center">
+      
+   <img src="https://github.com/user-attachments/assets/54f2f96e-8f24-40d4-bc88-67b35a1d1e39" width="500" height="500"/>
+      
+</p>
 
 # videoInCMD
 
@@ -31,12 +39,6 @@ Or simply run without arguments:
 python videoInCMD.py
 ```
 
-## Examples
-###### A small example of the capabilities of the program
 
-<small>
-   
-![bad-optimize](https://github.com/user-attachments/assets/db0ff0ea-00b6-43cb-8589-8f82a5a999f7)
-
-</small>      
+ 
 
