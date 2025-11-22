@@ -2,7 +2,6 @@ import os
 import sys
 import time
 import asyncio
-import json
 import skimage as ski
 from skimage.transform import resize
 
@@ -11,6 +10,7 @@ vid_name = "input_video.mp4"
 out_name = r"temp\output_video"
 vid_fps = 30
 fps_control = False
+image_ext = ".png"
 
 
 frameSTR = ""
@@ -56,7 +56,7 @@ def main():
 
     initialize()
 
-    displayInRealTime = input(f'Display video in real-time? (current: {"Yes" if displayInRealTime else "No"}) [y/n]: ').strip().lower() == 'y'
+    displayInRealTime = input(f'Display video in real-time (Not-saving) ? (current: {"Yes" if displayInRealTime else "No"}) [y/n]: ').strip().lower() == 'y'
 
     if displayInRealTime == True:
         input_fps_control = input(f'Enable FPS control? (current: {"Yes" if fps_control else "No"}) [y/n]: ')
@@ -74,7 +74,7 @@ def main():
     os.system('cls' if os.name == 'nt' else 'clear')
     
 
-    frame_files = sorted([f for f in os.listdir(r'.\temp') if f.startswith('output_video') and f.endswith('.jpeg')])
+    frame_files = sorted([f for f in os.listdir(r'.\temp') if f.startswith('output_video') and f.endswith(image_ext)])
 
     time_at_start = time.time()
 
@@ -117,11 +117,15 @@ def main():
     else:
         saveVideoFramesAsText( processed_frame_file,r'.\output\output_' + vid_name + '.txt' )
 
+        input("Open video in renderer ? [y/n]: ").strip().lower() == 'y' and os.system(f'python renderer.py .\\output\\output_{vid_name}.txt {vid_fps}')
+
 
     time_elapsed = time.time() - time_at_frame1   
     
 
     print(f"Video played/saved in {time_elapsed} seconds.")
+
+    
     
 
 
@@ -163,7 +167,7 @@ def videoToFrames():
     ffmpeg_path
     + ' -i ' + vid_name
     + ' -vf "fps=' + str(vid_fps) + ',scale=-1:' + str(max(dimensions)) + '" '
-    + out_name + '%04d.jpeg' )
+    + out_name + '%04d' + image_ext )
 
 
 
